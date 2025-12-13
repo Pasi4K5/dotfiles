@@ -116,7 +116,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias rl="source ~/.zshrc"
 alias shrc="nvim ~/.zshrc"
-alias wezrc="nvim ~/.wezterm.lua"
+alias termrc="nvim ~/.wezterm.lua"
 alias nv="nvim"
 alias hyprconf="nvim ~/.config/hypr/hyprland.conf"
 alias hyprl="hyprctl reload"
@@ -150,7 +150,14 @@ tunneloracle() {
 }
 
 shist() {
-  history | grep -i "$@"
+  local prefix='^\s*[0-9]+\s+'
+  local pattern="$*"
+
+  if [[ $pattern == ^* ]]; then
+    pattern="$prefix${pattern#^}"
+  fi
+
+  history | grep -Pi "$pattern"
 }
 
 eval "$(starship init zsh)"
