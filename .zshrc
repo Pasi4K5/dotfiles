@@ -160,6 +160,10 @@ shist() {
   history | grep -Pi "$pattern"
 }
 
+re() {
+  zsh -c "$(history | grep -E "^\s*$1\s+" | sed -E 's/^\s*[0-9]+\s+//')"
+}
+
 eval "$(starship init zsh)"
 
 # Clang
