@@ -1,3 +1,5 @@
+set -e
+
 repo_path="$HOME/.dotfiles/"
 repo_url="https://github.com/Pasi4K5/dotfiles.git"
 backup_path="$HOME/.dotfiles-backup/"
