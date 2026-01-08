@@ -11,7 +11,10 @@ then
 fi
 
 git clone --bare $repo_url $repo_path
-alias cfg="/usr/bin/git --git-dir=$repo_path --work-tree=$HOME"
+
+cfg() {
+  /usr/bin/git --git-dir=$repo_path --work-tree=$HOME
+}
 
 cfg checkout
 
