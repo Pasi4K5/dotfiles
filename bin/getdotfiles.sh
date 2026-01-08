@@ -13,7 +13,7 @@ fi
 git clone --bare $repo_url $repo_path
 
 cfg() {
-  /usr/bin/git --git-dir=$repo_path --work-tree=$HOME
+  /usr/bin/git --git-dir="$repo_path" --work-tree="$HOME" "$@" 
 }
 
 cfg checkout
