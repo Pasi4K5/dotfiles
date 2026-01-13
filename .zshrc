@@ -128,9 +128,11 @@ alias lzd="lazydocker"
 alias sshoracle="ssh -i ~/.ssh/id_pasi4k5 ubuntu@129.153.150.28"
 alias upgrade="sudo dnf upgrade"
 alias vencord="sh -c \"\$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)\""
+alias equicord="sh -c \"$(curl -sS https://raw.githubusercontent.com/Equicord/Equicord/refs/heads/main/misc/install.sh)\""
 alias upgrade="sudo dnf upgrade"
 alias sshoracle="ssh -i ~/.ssh/id_pasi4k5 ubuntu@129.153.150.28"
 alias cfg='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias notifs="systemctl --user disable --now mako.service && systemctl --user restart plasma-plasmashell"
 
 pp() {
   docker compose exec php /app/docker/development/entrypoint.sh $@
