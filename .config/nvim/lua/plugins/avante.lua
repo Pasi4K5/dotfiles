@@ -14,8 +14,14 @@ return {
     -- this file can contain specific instructions for your project
     instructions_file = "avante.md",
     -- for example
-    provider = "claude",
+    provider = "ollama",
     providers = {
+      ollama = {
+        model = "qwen3.5:9b",
+        is_env_set = function()
+          return require("avante.providers.ollama").check_endpoint_alive()
+        end,
+      },
       claude = {
         endpoint = "https://api.anthropic.com",
         model = "claude-sonnet-4-20250514",

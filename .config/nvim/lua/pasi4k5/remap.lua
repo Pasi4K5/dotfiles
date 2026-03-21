@@ -1,13 +1,12 @@
 local Terminal = require("toggleterm.terminal").Terminal
 local tree_api = require("nvim-tree.api").tree
-
-function tree_cwd()
-    tree_api.toggle({ path = vim.fn.getcwd() })
-end
+local term = require("toggleterm")
 
 vim.g.mapleader = " "
 
-vim.keymap.set("n", "<leader>x", tree_cwd)
+vim.keymap.set("n", "<leader>x", function ()
+    tree_api.toggle({ path = vim.fn.getcwd() })
+end)
 
 local lg = Terminal:new({
     cmd = "lazygit",
@@ -29,4 +28,6 @@ function _lg_toggle()
 end
 
 vim.api.nvim_set_keymap("n", "<leader>lg", "<cmd>lua _lg_toggle()<CR>", {noremap = true, silent = true})
+
+term.setup{}
 
