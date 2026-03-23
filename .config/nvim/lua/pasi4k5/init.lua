@@ -13,6 +13,7 @@ vim.diagnostic.config({
 
 vim.cmd[[colorscheme tokyonight]]
 
+
 -- Bubbles config for lualine
 -- Author: lokesh-krishna
 -- MIT license, see LICENSE for more details.
@@ -77,4 +78,6 @@ require('lualine').setup {
 }
 
 ----------
+
+require('Comment').setup()
 

@@ -8,6 +8,19 @@ vim.keymap.set("n", "<leader>x", function ()
     tree_api.toggle({ path = vim.fn.getcwd() })
 end)
 
+vim.keymap.set("n", "<leader>gd", function ()
+    require("omnisharp_extended").lsp_definition()
+end)
+vim.keymap.set("n", "<leader>gt", function ()
+    require("omnisharp_extended").lsp_type_definition()
+end)
+vim.keymap.set("n", "<leader>gr", function ()
+    require("omnisharp_extended").lsp_references()
+end)
+vim.keymap.set("n", "<leader>gu", function ()
+    require("omnisharp_extended").lsp_implementation()
+end)
+
 local lg = Terminal:new({
     cmd = "lazygit",
     hidden = true,

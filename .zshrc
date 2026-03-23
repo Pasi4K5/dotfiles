@@ -199,3 +199,5 @@ source <(ng completion script)
 
 eval $(thefuck --alias)
 
+# opencode
+export PATH=/home/pasi/.opencode/bin:$PATH
