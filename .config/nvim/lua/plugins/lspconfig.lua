@@ -18,6 +18,8 @@ return {
 	    vim.lsp.enable("texlab")
 	    vim.lsp.enable("rust_analyzer")
             vim.lsp.enable("marksman")
+            vim.lsp.enable("clangd")
+            vim.lsp.enable("neocmake")
         end,
     }
 }
